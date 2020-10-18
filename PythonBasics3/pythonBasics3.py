@@ -13,9 +13,14 @@ import re
 # (For our purposes, a number is any character that is 0,1,2,3,4,5,6,7,8, or 9.)
 # Note: Be sure to use RegEx!
 def starts_with_number(s):
-  # YOUR CODE HERE
-
-  return
+   # YOUR CODE HERE
+  condition = r'\d'
+  if len(s) == 0:
+    return False
+  elif re.match(condition, s):
+    return True
+  else:
+    return False  
 
 # # Part B. starts_with_consonant
 # Define a function starts_with_consonant(s) that takes a string and returns true
