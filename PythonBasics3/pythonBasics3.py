@@ -29,7 +29,14 @@ def starts_with_number(s):
 # Note: Be sure to use RegEx and it works for both upper and lower case and for nonletters!
 def starts_with_consonant(s):
   # YOUR CODE HERE
-
+  s = s.lower()
+  condition = r'[^aeiou#]'
+  if len(s) == 0:
+    return False
+  elif re.match(condition, s):
+    return True
+  else:
+    return False 
   return
 
 
@@ -40,5 +47,15 @@ def starts_with_consonant(s):
 # Hint: Use regular expressions to match for the pattern of a binary number that is a multiple of 4.
 def binary_multiple_of_4(s):
   # YOUR CODE HERE
+  condition = '[0-1]+00$'
+  if len(s) == 0:
+    return False
+  elif s == '0':
+    return True  
+  elif re.match(condition, s):
+    return True
+  else:
+    return False 
+ 
 
-  return
+  
