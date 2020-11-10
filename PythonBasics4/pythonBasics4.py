@@ -12,7 +12,6 @@ def array_2_dict(emails, contacts):
     values = emails
     if len(emails) == 0:
         return dict(keys)
-    #thisdict = dict(zip(keys, values))
     else:
         return dict(zip(keys, values))
 
@@ -20,8 +19,16 @@ def array_2_dict(emails, contacts):
 # # Part B.
 def array2d_2_dict(contact_info, contacts):
     # YOUR CODE HERE
+    count = 0
+    for i in contacts:
+        tempDict = dict()
+        if count < len(contact_info) and len(contact_info[count]) != 0:
+            tempDict["email"] = contact_info[count][0];
+            tempDict["phone"] = contact_info[count][1];
+            count += 1
+        contacts[i] = tempDict
+    return contacts    
 
-    return
 
 # # Part C.
 def dict_2_array(contacts):
