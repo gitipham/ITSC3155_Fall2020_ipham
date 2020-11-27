@@ -19,17 +19,19 @@ def index():
 
 @app.route('/notes')
 def get_notes():
-    notes = {1: {'title': 'First1 note', 'text': 'This is my first note', 'date': '11-1-2020'},
-            2: {'title': 'Second2 note', 'text': 'This is my second note', 'date': '11-2-2020'},
-            3: {'title': 'Third3 note', 'text': 'This is my third note', 'date': '11-3-2020'}}
-    return render_template('notes.html', notes = notes)    
+    a_user = {'name': 'Ivy', 'email':'ipham@uncc.edu'}
+    notes = {1: {'title': 'First note', 'text': 'This is my first note', 'date': '11-1-2020'},
+            2: {'title': 'Second note', 'text': 'This is my second note', 'date': '11-2-2020'},
+            3: {'title': 'Third note', 'text': 'This is my third note', 'date': '11-3-2020'}}
+    return render_template('notes.html', notes = notes, user = a_user)    
 
 @app.route('/notes/<note_id>')
 def get_note(note_id):
+    a_user = {'name': 'Ivy', 'email':'ipham@uncc.edu'}
     notes = {1: {'title': 'First note', 'text': 'This is my first note', 'date': '11-1-2020'},
              2: {'title': 'Second note', 'text': 'This is my second note', 'date': '11-2-2020'},
              3: {'title': 'Third note', 'text': 'This is my third note', 'date': '11-3-2020'}}
-    return render_template('note.html', note = notes[int(note_id)])
+    return render_template('note.html', note = notes[int(note_id)], user = a_user)
 
 @app.route('/notes/new')
 def new_note():
