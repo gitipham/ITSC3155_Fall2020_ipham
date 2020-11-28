@@ -9,10 +9,11 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     </head>
     <body>
-       <nav>
-           <!--  add navigation links -->
-
-       </nav>
+        <nav>
+            <a href="/index"> Home </a> ||
+            <a href="/notes"> My Notes </a> ||
+            <a href="/notes/new"> Add Note </a>
+        </nav>
 
         <h1>Welcome {{user.name}} to the 49er Notes App!</h1>
         <form action="new" method="post">
