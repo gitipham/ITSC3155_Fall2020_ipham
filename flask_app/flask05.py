@@ -40,6 +40,15 @@ def get_note(note_id):
     my_note = db.session.query(Note).filter_by(id = note_id).one()
     return render_template('note.html', note = my_note, user = a_user)
 
+@app.route('/notes/edit/<note_id>')
+def update_note(note_id):
+    # Get request - show new note form to edit note
+    # retrieve user from database
+    a_user = db.session.query(User).filter_by(email = 'ipham@uncc.edu').one()
+    # retrieve user from database
+    my_note = db.session.query(Note).filter_by(id = note_id).one()
+    return render_template('new.html', note = my_note, user = a_user)
+
 @app.route('/notes/new', methods = ['GET', 'POST'])
 def new_note():
     if request.method == 'POST':
